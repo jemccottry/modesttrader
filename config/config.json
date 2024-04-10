@@ -1,0 +1,17 @@
+
+{
+    "kraken": {
+
+    },
+    "trading": {
+        "defaultTrade": 16.01,
+        "profitTarget": 0.02, 
+        "riskPerTrade": 0.01 
+    },
+    "logging": {
+        "level": "info" 
+    },
+    "webhook": {
+        "port": 443
+      }
+}
