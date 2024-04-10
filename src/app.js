@@ -17,7 +17,7 @@ const config = require("../config/config.json");
 async function main() {
   try {
     // Initialize the ModestTrader application
-    console.log("Initializing ModestTrader v1 process...");
+    console.log("Initializing ModestTrader v1...");
 
     // Fetch system status
     const systemStatus = await getSystemStatus();
