@@ -130,5 +130,5 @@ dist
 .pnp.*
 
 # trade files
-src/data/opentrades.txt
-src/data/completedtrades.csv
+**/src/data/opentrades.txt
+**/src/data/completedtrades.csv
