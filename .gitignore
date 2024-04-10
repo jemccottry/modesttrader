@@ -128,3 +128,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# trade files
+src/data/opentrades.txt
+src/data/completedtrades.csv
