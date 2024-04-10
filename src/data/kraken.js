@@ -5,6 +5,7 @@ const crypto = require("crypto");
 const config = require("../../config/config.json");
 const fs = require("fs").promises;
 const path = require("path");
+require("dotenv").config();
 
 // Function to load cryptocurrency names from JSON file
 async function loadCryptoData() {
@@ -146,8 +147,8 @@ async function getRecentTrades(pair) {
 
 async function queryPrivateEndpoint(endPointName, inputParameters) {
   try {
-    const apiPublicKey = config.kraken.apiKey;
-    const apiPrivateKey = config.kraken.apiSecret;
+    const apiPublicKey = process.env.apiKey;
+    const apiPrivateKey = process.env.apiSecret;
     const baseDomain = "https://api.kraken.com";
     const privatePath = "/0/private/";
     const apiEndpointFullURL = baseDomain + privatePath + endPointName;
