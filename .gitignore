@@ -132,3 +132,4 @@ dist
 # trade files
 **/src/data/opentrades.txt
 **/src/data/completedtrades.csv
+**/src/utils/log.txt

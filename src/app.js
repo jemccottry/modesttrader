@@ -21,15 +21,15 @@ async function main() {
 
     // Fetch system status
     const systemStatus = await getSystemStatus();
-    console.log("Kraken System Status:", systemStatus.data);
+    console.log("Kraken System Status:", systemStatus.data.result);
 
     // Fetch tradable pairs
     const tradablePairs = await getPairsWithUSDT();
-    console.log("Kraken Tradable Pairs:", tradablePairs);
+    //console.log("Kraken Tradable Pairs:", tradablePairs);
 
     // Fetch account balance
     const availbalance = await getUSDTBalance();
-    console.log("Trading Balance: ", availbalance);
+    console.log("Trading Balance (USDT): ", availbalance);
 
     // Fetch current assets
     const curassets = await getCurrentAssets();
@@ -75,9 +75,7 @@ async function main() {
       process.exit(0);
     });
 
-    // Start main loop (placeholder)
-    console.log("Starting main loop...");
-    // Replace this with your main trading logic
+    // Additional Logic
   } catch (error) {
     console.error("Error initializing ModestTrader:", error);
   }

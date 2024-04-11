@@ -26,8 +26,9 @@ Key features of ModestTrader include:
 
 
 ### Configuration
-1. Set up your API keys for Kraken and CoinGecko in the `config/config.json` file.
-2. Configure other parameters such as trading goals, risk management thresholds, and logging levels as needed.
+1. Set up your API keys for Kraken and CoinGecko in a .env file.
+2. Create 2 files in the data folder opentrades.txt and completedtrades.csv
+3. Configure other parameters such as trading goals, risk management thresholds, and logging levels as needed.
 
 ### Running the Bot
 1. Start the ModestTrader application:

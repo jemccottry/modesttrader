@@ -45,10 +45,8 @@ function listen(callback) {
 
   // Start the HTTP server to listen for incoming webhook requests
   server.listen(config.webhook.port, () => {
-    console.log(`Webhook server is running on port ${config.webhook.port}`);
-    console.log(
-      `Webhook endpoint: http://localhost:${config.webhook.port}${webhookEndpoint}`
-    );
+    //console.log(`Webhook server is running on port ${config.webhook.port}`);
+    //console.log(`Webhook endpoint: http://localhost:${config.webhook.port}${webhookEndpoint}`);
   });
 }
 

@@ -3,6 +3,7 @@
 const axios = require("axios");
 const crypto = require("crypto");
 const config = require("../../config/config.json");
+const { writeToLog } = require("../utils/utils");
 const fs = require("fs").promises;
 const path = require("path");
 require("dotenv").config();
@@ -42,7 +43,7 @@ async function writeArrayToFile(array, filename) {
   try {
     const filePath = path.join(__dirname, "..", "preprocessing", filename);
     await fs.writeFile(filePath, array.join("\n"));
-    console.log(`Values written to ${filename}`);
+    //console.log(`Values written to ${filename}`);
   } catch (error) {
     console.error(`Error writing values to ${filename}:`, error);
     throw error;
@@ -248,7 +249,7 @@ async function getCurrentAssets() {
       }
     });
 
-    //console.log("Non-zero Balances:", nonZeroBalances);
+    //console.log("Current Assets:", nonZeroBalances);
     return nonZeroBalances;
   } catch (error) {
     console.error("Error fetching current assets:", error);
@@ -264,14 +265,17 @@ async function marketBuy(pair, volume) {
       "AddOrder",
       privateInputParameters
     );
-    console.log(response);
+
     if (response.error && response.error.length > 0) {
-      console.error("Error creating market buy order:", response.error);
+      writeToLog(`Error creating market buy order: ${response.error}`);
       throw new Error(response.error);
+    } else {
+      let strResponse = JSON.stringify(response);
+      writeToLog(strResponse);
     }
     return response;
   } catch (error) {
-    console.error("Error creating market buy order:", error.message);
+    //writeToLog(`Error creating market buy order: ${error.message}`);
     throw error;
   }
 }
@@ -283,14 +287,17 @@ async function marketSell(pair, volume) {
       "AddOrder",
       privateInputParameters
     );
-    console.log(response);
+
     if (response.error && response.error.length > 0) {
-      console.error("Error creating market sell order:", response.error);
+      writeToLog(`Error creating market sell order: ${response.error}`);
       throw new Error(response.error);
+    } else {
+      let strResponse = JSON.stringify(response);
+      writeToLog(strResponse);
     }
     return response;
   } catch (error) {
-    console.error("Error creating market sell order:", error.message);
+    //console.error("Error creating market sell order:", error.message);
     throw error;
   }
 }
